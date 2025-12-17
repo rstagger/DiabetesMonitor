@@ -36,3 +36,26 @@ graph LR
     D -->|Fetch Data| H[Node.js Server]
     H -->|WebSocket| I[Web Dashboard]
     end
+
+✨ Key Features
+⚡ Real-Time Visualization: Live updating graph (Last 60 seconds) for Glucose trends.
+
+🛡️ Business Logic Validation: Automatically filters/drops invalid sensor data (e.g., negative heart rates, impossible glucose levels) before processing to ensure data integrity.
+
+🚨 Smart Alerts: Categorizes health status into NORMAL, WARNING, CRITICAL_HIGH, or CRITICAL_LOW.
+
+💾 Data Lake Archiving: Stores raw sensor data into CSV files for audit trails and deep learning.
+
+📊 Batch Analytics: On-demand calculation of daily statistics (Average, Min, Max, Total Records).
+
+🧹 System Reset: Includes an initialization script to clean DB and prepare storage environments.
+
+🛠️ Tech Stack
+
+Component,Technology,Description
+Ingestion,Apache Kafka,Message Broker for high-throughput data streaming.
+Processing,PySpark (Spark 3.x),Engine for both Streaming and Batch processing.
+Storage,Redis Stack,In-memory database for sub-millisecond dashboard updates.
+Storage,Local Filesystem,Acts as a Data Lake (CSV format).
+Backend,Node.js + Socket.io,Serves data to the frontend via WebSockets.
+Frontend,HTML5 + Chart.js,Responsive dashboard for visualization.
