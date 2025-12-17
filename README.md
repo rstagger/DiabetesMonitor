@@ -1,4 +1,3 @@
-=
 # 🏥 Real-Time Health Monitoring System (Lambda Architecture)
 
 ![Status](https://img.shields.io/badge/Status-Prototype-green?style=flat-square)
